@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<p><strong>Quiz results:</strong></p>
+<p><strong>Correct: {{ right_answers }}/{{ total_questions }}</strong></p>
+<p><strong>Incorrect: {{ wrong_answers }}/{{ total_questions }}</strong></p>
+<p><strong>Percentage: {{ right_percentage }}%</strong></p>
+<a href="{% url 'exam:clear' quiz_id %}">Try again</a>
+<a href="{% url 'exam:index' %}">Back to quiz list</a>
+{% endblock %}

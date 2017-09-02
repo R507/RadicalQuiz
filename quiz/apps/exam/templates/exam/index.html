@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<p><strong>Available quizzes:</strong></p>
+{% if quizzes %}
+    <ul>
+    {% for quiz in quizzes %}
+        <li><a href="{% url 'exam:quiz' quiz.id %}">{{ quiz.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No quizzes are available.</p>
+{% endif %}
+{% endblock %}
